@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
         mGLView= (GLSurfaceView) findViewById(R.id.glsurfaceview);
         mGLView.setEGLContextClientVersion(2);
-        List<Obj3D> model=ObjParser.readMultiObj(this,"assets/3dres/pikachu.obj");
+        List<Obj3D> model=ObjParser.readMultiObj(this,"assets/3d/bu_lian_shi.obj");
         filters=new ArrayList<>();
         for (int i=0;i<model.size();i++){
-            ObjRender f=new ObjRender(getResources(),"3dres","3dres/obj2.vert","3dres/obj2.frag");
+            ObjRender f=new ObjRender(getResources(),"3d","3dres/obj2.vert","3dres/obj2.frag");
             f.setObj3D(model.get(i));
             filters.add(f);
         }

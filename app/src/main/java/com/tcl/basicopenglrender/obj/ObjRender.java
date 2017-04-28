@@ -4,6 +4,7 @@ import android.content.res.Resources;
 import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 
+import com.tcl.basicopenglrender.R;
 import com.tcl.basicopenglrender.utils.tLog;
 
 import java.io.IOException;
@@ -58,7 +59,11 @@ public class ObjRender extends BasicRender {
         if(obj!=null&&obj.mtl!=null){
             try {
                 tLog.i(TAG,"texture-->"+pathName+"/"+obj.mtl.map_Kd);
-                textureId=createTexture(BitmapFactory.decodeStream(mRes.getAssets().open(pathName+"/"+obj.mtl.map_Kd)));
+                if (obj.mtl.map_Kd!=null){
+                    textureId=createTexture(BitmapFactory.decodeStream(mRes.getAssets().open(pathName+"/"+obj.mtl.map_Kd)));
+                }else {
+                    textureId= R.drawable.bu_lian_shi_d;
+                }
                 setTextureId(textureId);
             } catch (IOException e) {
                 e.printStackTrace();

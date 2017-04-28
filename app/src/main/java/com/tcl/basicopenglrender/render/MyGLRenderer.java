@@ -62,7 +62,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
             Matrix.setLookAtM(mViewMatrix, 0, 0, 0, 7.0f, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
             Matrix.multiplyMM(mMVPMatrix,0,mProjectMatrix,0,mViewMatrix,0);*/
             Matrix.translateM(mMVPMatrix,0,0,-0.3f,0);
-            Matrix.scaleM(mMVPMatrix,0,0.008f,0.008f*width/height,0.008f);
+            Matrix.scaleM(mMVPMatrix,0,0.002f,0.002f*width/height,0.002f);
             f.setMatrix(mMVPMatrix);
         }
     }

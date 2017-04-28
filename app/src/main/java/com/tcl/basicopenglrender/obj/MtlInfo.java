@@ -24,9 +24,9 @@ public class MtlInfo {
     public float Ns;                    //shininess
     public float Ni;
 
-    public String map_Kd;               //固有纹理贴图
-    public String map_Ks;               //高光纹理贴图
-    public String map_Ka;               //阴影纹理贴图
+    public String map_Kd = null;               //固有纹理贴图
+    public String map_Ks = null;               //高光纹理贴图
+    public String map_Ka = null;               //阴影纹理贴图
 
     //denotes the illumination model used by the material.
     // illum = 1 indicates a flat material with no specular highlights,
