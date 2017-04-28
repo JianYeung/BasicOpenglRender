@@ -37,9 +37,6 @@ public abstract class BasicRender {
     protected int textureId = 0;
 
     protected float[] matrix = new float[16];
-    protected float[] mViewMatrix=new float[16];
-    protected float[] mProjectMatrix=new float[16];
-    protected float[] mMVPMatrix=new float[16];
 
     protected String vertexFileName;
     protected String fragmentFileName;

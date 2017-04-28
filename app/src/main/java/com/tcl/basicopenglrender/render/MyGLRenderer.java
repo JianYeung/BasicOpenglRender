@@ -25,6 +25,10 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
     private static final String TAG = MyGLRenderer.class.getSimpleName();
 
+    protected float[] mViewMatrix=new float[16];
+    protected float[] mProjectMatrix=new float[16];
+    protected float[] mMVPMatrix=new float[16];
+
     private List<ObjRender> filters;
 
 
@@ -46,15 +50,20 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         tLog.i(TAG,"onSurfaceChanged()");
         for (ObjRender f:filters){
             f.setSize(width, height);
-            float[] matrix= {
+            float[] mMVPMatrix= {
                     1,0,0,0,
                     0,1,0,0,
                     0,0,1,0,
                     0,0,0,1
             };
-            Matrix.translateM(matrix,0,0,-0.3f,0);
-            Matrix.scaleM(matrix,0,0.008f,0.008f*width/height,0.008f);
-            f.setMatrix(matrix);
+
+           /* float ratio=(float)width/height;
+            Matrix.orthoM(mProjectMatrix, 0, -ratio, ratio, -1, 1, 3, 7);
+            Matrix.setLookAtM(mViewMatrix, 0, 0, 0, 7.0f, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
+            Matrix.multiplyMM(mMVPMatrix,0,mProjectMatrix,0,mViewMatrix,0);*/
+            Matrix.translateM(mMVPMatrix,0,0,-0.3f,0);
+            Matrix.scaleM(mMVPMatrix,0,0.008f,0.008f*width/height,0.008f);
+            f.setMatrix(mMVPMatrix);
         }
     }
 
