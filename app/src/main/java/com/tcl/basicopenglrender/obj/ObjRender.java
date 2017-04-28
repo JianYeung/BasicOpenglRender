@@ -8,6 +8,7 @@ import com.tcl.basicopenglrender.utils.tLog;
 
 import java.io.IOException;
 
+
 /**
  * 项目名：   BasicOpenglRender
  * 包名：     com.tcl.basicopenglrender.obj
@@ -28,8 +29,9 @@ public class ObjRender extends BasicRender {
         tLog.i(TAG,"Res: "+ mRes);
     }
 
-    public ObjRender(Resources mRes, String vertex, String fragment){
+    public ObjRender(Resources mRes, String path, String vertex, String fragment){
         super(mRes);
+        pathName = path;
         vertexFileName = vertex;
         fragmentFileName = fragment;
     }
@@ -55,8 +57,8 @@ public class ObjRender extends BasicRender {
         GLES20.glEnable(GLES20.GL_DEPTH_TEST);
         if(obj!=null&&obj.mtl!=null){
             try {
-                tLog.i(TAG,"texture-->"+"3dres/"+obj.mtl.map_Kd);
-                textureId=createTexture(BitmapFactory.decodeStream(mRes.getAssets().open("3dres/"+obj.mtl.map_Kd)));
+                tLog.i(TAG,"texture-->"+pathName+"/"+obj.mtl.map_Kd);
+                textureId=createTexture(BitmapFactory.decodeStream(mRes.getAssets().open(pathName+"/"+obj.mtl.map_Kd)));
                 setTextureId(textureId);
             } catch (IOException e) {
                 e.printStackTrace();

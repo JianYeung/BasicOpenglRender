@@ -226,16 +226,35 @@ public class ObjParser {
                     case "Ka":
                         read(tempsa,mtlInfo.Ka);
                         break;
-                    case "Ke":
-                        read(tempsa,mtlInfo.Ke);
-                        break;
                     case "Ks":
                         read(tempsa,mtlInfo.Ks);
                         break;
+                    case "Ke":
+                        read(tempsa,mtlInfo.Ke);
+                        break;
+                    case "Tf":
+                        read(tempsa,mtlInfo.Tf);
+                        break;
+                    case "Tr":
+                        mtlInfo.Tr=Float.parseFloat(tempsa[1]);
+                        break;
+                    case "d":
+                        mtlInfo.d=Float.parseFloat(tempsa[1]);
+                        break;
                     case "Ns":
                         mtlInfo.Ns=Float.parseFloat(tempsa[1]);
+                        break;
+                    case "Ni":
+                        mtlInfo.Ni=Float.parseFloat(tempsa[1]);
+                        break;
                     case "map_Kd":
                         mtlInfo.map_Kd=tempsa[1];
+                        break;
+                    case "map_Ka":
+                        mtlInfo.map_Ka=tempsa[1];
+                        break;
+                    case "map_Ks":
+                        mtlInfo.map_Ks=tempsa[1];
                         break;
                 }
             }

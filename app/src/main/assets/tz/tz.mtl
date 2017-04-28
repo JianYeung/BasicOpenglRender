@@ -1,0 +1,39 @@
+newmtl lambert2SG
+Ns 0
+d 1
+illum 4
+Kd 0.8 0.8 0.8
+Ks 0.0 0.0 0.0
+Ka 0.2 0.2 0.2
+map_Kd tz.jpg
+Ni 1.00
+
+newmtl lambert3SG
+Ns 0
+d 1
+illum 4
+Kd 0.8 0.8 0.8
+Ks 0.0 0.0 0.0
+Ka 0.2 0.2 0.2
+map_Kd plate2.jpg
+Ni 1.00
+
+newmtl lambert4SG
+Ns 0
+d 1
+illum 4
+Kd 0.8 0.8 0.8
+Ks 0.0 0.0 0.0
+Ka 0.2 0.2 0.2
+map_Kd archexteriors.jpg
+Ni 1.00
+
+newmtl lambert5SG
+Ns 0
+d 1
+illum 4
+Kd 0.8 0.8 0.8
+Ks 0.0 0.0 0.0
+Ka 0.2 0.2 0.2
+map_Kd plate.jpg
+Ni 1.00

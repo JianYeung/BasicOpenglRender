@@ -1,9 +1,11 @@
+precision mediump float;
 attribute vec3 vPosition;
 attribute vec2 vCoord;
 uniform mat4 vMatrix;
 uniform vec3 vKa;
 uniform vec3 vKd;
 uniform vec3 vKs;
+
 
 varying vec2 textureCoordinate;
 
@@ -49,12 +51,8 @@ void main(){
     vec3 lightLocation=vec3(0.0,-200.0,-500.0);      //光照位置
     vec3 camera=vec3(0,200.0,0);
     float shininess=10.0;             //粗糙度，越小越光滑
-//    vec4 a,d,s;
-//    calculateLight(normalize(vNormal),a,d,s,camera,pos,vec4(vKa,1.0),vec4(vKd,1.0),vec4(vKs,1.0));
-//    vAmbient=a;
-//    vDiffuse=d;
-//    vSpecular=s;
 
+    //vKs = vec3(1.0,1.0,1.0);
 
      vec3 newNormal=normalize((vMatrix*vec4(vNormal+vPosition,1)).xyz-(vMatrix*vec4(vPosition,1)).xyz);
      vec3 vp=normalize(lightLocation-(vMatrix*vec4(vPosition,1)).xyz);

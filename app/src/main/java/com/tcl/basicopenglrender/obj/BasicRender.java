@@ -44,6 +44,8 @@ public abstract class BasicRender {
     protected String vertexFileName;
     protected String fragmentFileName;
 
+    protected String pathName;
+
     public BasicRender(Resources mRes) {
         this.mRes = mRes;
         tLog.i(TAG,"super Res: "+ mRes);

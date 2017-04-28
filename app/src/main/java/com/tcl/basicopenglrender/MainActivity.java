@@ -2,11 +2,8 @@ package com.tcl.basicopenglrender;
 
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -35,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
         mGLView= (GLSurfaceView) findViewById(R.id.glsurfaceview);
         mGLView.setEGLContextClientVersion(2);
-        List<Obj3D> model=ObjParser.readMultiObj(this,"assets/3dres/pikachu.obj");
+        List<Obj3D> model=ObjParser.readMultiObj(this,"assets/xz/1.obj");
         filters=new ArrayList<>();
         for (int i=0;i<model.size();i++){
-            ObjRender f=new ObjRender(getResources(),"3dres/obj2.vert","3dres/obj2.frag");
+            ObjRender f=new ObjRender(getResources(),"xz","3dres/obj2.vert","3dres/obj2.frag");
             f.setObj3D(model.get(i));
             filters.add(f);
         }

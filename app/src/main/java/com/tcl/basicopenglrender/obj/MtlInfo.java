@@ -18,7 +18,12 @@ public class MtlInfo {
     public float[] Kd=new float[3];     //固有色
     public float[] Ks=new float[3];     //高光色
     public float[] Ke=new float[3];     //
+    public float[] Tf=new float[3];
+    public float Tr;
+    public float d;
     public float Ns;                    //shininess
+    public float Ni;
+
     public String map_Kd;               //固有纹理贴图
     public String map_Ks;               //高光纹理贴图
     public String map_Ka;               //阴影纹理贴图
@@ -29,4 +34,9 @@ public class MtlInfo {
     // illum = 2 denotes the presence of specular highlights,
     // and so a specification for Ks is required.
     public int illum;
+
+
+    public MtlInfo() {
+
+    }
 }
